@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Bioinova</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: relative;
+        }
+        .header img {
+            position: absolute;
+            left: 50px;
+            top: 70%;
+            transform: translateY(-50%);
+            height: 140px;
+        }
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+        }
+        .navbar a, .dropdown-content a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+        }
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .main-content {
+            padding: 20px;
+            margin-bottom: 10px; /* Ajustado para margen inferior más pequeño */
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .contact-info {
+            margin: 20px 0;
+        }
+        .contact-info h2 {
+            color: #333;
+        }
+        .contact-info p {
+            margin: 5px 0;
+        }
+        .contact-form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+        }
+        .contact-form h2 {
+            color: #333;
+            margin-top: 0;
+        }
+        .contact-form label {
+            display: block;
+            margin-bottom: 8px;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .contact-form button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .contact-form button:hover {
+            background-color: #555;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            margin-bottom: 0; /* Ajustado para margen inferior más pequeño */
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="logo/file.png" alt="Logo">
+        <h1>Bioinova</h1>
+    </div>
+    <div class="navbar">
+        <div class="dropdown">
+            <a href="monitoreo.html" class="dropbtn">Monitoreo</a>
+        </div>
+        <div class="dropdown">
+            <a href="programas.html" class="dropbtn">Educación</a>
+            <div class="dropdown-content">
+                <a href="programas.html">Programas</a>
+                <a href="investigacion.html">Investigación</a>
+                <a href="recursos.html">Recursos</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="proyectos.html" class="dropbtn">Colaboración</a>
+            <div class="dropdown-content">
+                <a href="donaciones.html">Socios</a>
+                <a href="voluntariado.html">Voluntariado</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="actuales.html" class="dropbtn">Campañas</a>
+            <div class="dropdown-content">
+                <a href="actuales.html">Actuales</a>
+                <a href="pasadas.html">Pasadas</a>
+                <a href="futuras.html">Futuras</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="quienes_somos.html" class="dropbtn">Quienes Somos</a>
+            <div class="dropdown-content">
+                <a href="mision.html">Misión</a>
+                <a href="vision.html">Visión</a>
+                <a href="objetivos.html">Objetivos</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="main-content">
+        <div class="section contact-info">
+            <h2>Contacto</h2>
+            <p>Estamos aquí para ayudarte. Puedes ponerte en contacto con nosotros a través de los siguientes medios:</p>
+            <p><strong>Correo Electrónico:</strong></p>
+            <p><a href="mailto:info@bioinova.com">info@bioinova.com</a></p>
+            <p><strong>Redes Sociales:</strong></p>
+            <p>
+                <a href="https://facebook.com/bioinova" target="_blank">Facebook</a> | 
+                <a href="https://twitter.com/bioinova" target="_blank">Twitter</a> | 
+                <a href="https://instagram.com/bioinova" target="_blank">Instagram</a>
+            </p>
+        </div>
+        
+        <div class="section contact-form">
+            <h2>Envíanos un Mensaje</h2>
+            <form action="enviar_contacto.php" method="post">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Mensaje:</label>
+                <textarea id="message" name="message" rows="6" required></textarea>
+                
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Bioinova | Todos los derechos reservados</p>
+    </footer>
+</body>
+</html>

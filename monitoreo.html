@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitoreo - Bioinova</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 20px;
+        }
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+            max-width: 400px;
+            margin: auto;
+        }
+        select, button {
+            padding: 10px;
+            margin: 10px 0;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .community-container {
+            display: none;
+            margin-top: 10px;
+        }
+        .community-container select {
+            width: auto;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Seleccionar Departamento, Municipio y Comunidad</h1>
+        <form id="monitoringForm">
+            <label for="department">Selecciona un Departamento:</label>
+            <select id="department" name="department" onchange="updateMunicipalities()">
+                <option value="">-- Selecciona un Departamento --</option>
+                <option value="leon">León</option>
+                <option value="chinandega">Chinandega</option>
+                <option value="managua">Managua</option>
+            </select>
+
+            <div id="municipalityContainer" style="display: none;">
+                <label for="municipality">Selecciona un Municipio:</label>
+                <select id="municipality" name="municipality" onchange="updateCommunities()">
+                    <!-- Municipios se llenarán dinámicamente -->
+                </select>
+            </div>
+
+            <div id="communityContainer" class="community-container">
+                <label for="community">Selecciona una Comunidad:</label>
+                <select id="community" name="community">
+                    <!-- Comunidades se llenarán dinámicamente -->
+                </select>
+                <button type="button" onclick="goToCommunity()">Aceptar</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        const data = {
+            leon: {
+                'leon': ['La_ceiba'],
+                'el_sauce': ['san_antonio'],
+                'telica': ['San_jacinto']
+            },
+            chinandega: {
+                'chinandega': ['la_grecia'],
+                'corinto': ['paso_caballos'],
+                'el_viejo': ['rancheria']
+            },
+            managua: {
+                'managua': ['sabana_grande'],
+                'tipitapa': ['los_laureles'],
+                'ciudad sandino': ['el_faro']
+            }
+        };
+
+        function updateMunicipalities() {
+            const department = document.getElementById('department').value;
+            const municipalitySelect = document.getElementById('municipality');
+            const municipalityContainer = document.getElementById('municipalityContainer');
+            const communitySelect = document.getElementById('community');
+            const communityContainer = document.getElementById('communityContainer');
+
+            // Limpiar opciones anteriores
+            municipalitySelect.innerHTML = '';
+            communitySelect.innerHTML = '';
+
+            if (department) {
+                municipalityContainer.style.display = 'block';
+                communityContainer.style.display = 'none';
+
+                // Agregar opciones de municipios
+                const municipalities = Object.keys(data[department]);
+                municipalities.forEach(municipality => {
+                    const option = document.createElement('option');
+                    option.value = municipality;
+                    option.textContent = municipality.replace('_', ' ');
+                    municipalitySelect.appendChild(option);
+                });
+            } else {
+                municipalityContainer.style.display = 'none';
+                communityContainer.style.display = 'none';
+            }
+        }
+
+        function updateCommunities() {
+            const department = document.getElementById('department').value;
+            const municipality = document.getElementById('municipality').value;
+            const communitySelect = document.getElementById('community');
+            const communityContainer = document.getElementById('communityContainer');
+
+            // Limpiar opciones anteriores
+            communitySelect.innerHTML = '';
+
+            if (municipality) {
+                communityContainer.style.display = 'block';
+
+                // Agregar opciones de comunidades
+                const communities = data[department][municipality];
+                communities.forEach(community => {
+                    const option = document.createElement('option');
+                    option.value = community.toLowerCase().replace(/\s+/g, '_');
+                    option.textContent = community;
+                    communitySelect.appendChild(option);
+                });
+            } else {
+                communityContainer.style.display = 'none';
+            }
+        }
+
+        function goToCommunity() {
+            const department = document.getElementById('department').value;
+            const municipality = document.getElementById('municipality').value;
+            const community = document.getElementById('community').value;
+
+            if (department && municipality && community) {
+                const url = `${community}.html`;
+                window.location.href = url;
+            }
+        }
+    </script>
+</body>
+</html>
+
