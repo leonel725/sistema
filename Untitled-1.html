@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bioinova</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: relative;
+        }
+        .header img {
+            position: absolute;
+            left: 50px;
+            top: 70%;
+            transform: translateY(-50%);
+            height: 140px;
+        }
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+        }
+        .navbar a, .dropdown-content a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content, .department-content, .monitoring-options {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a, .department-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+        }
+        .dropdown-content a:hover, .department-content a:hover {
+            background-color: #ddd;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .department-content {
+            top: 100%;
+            left: 0;
+        }
+        .monitoring-options {
+            top: 100%;
+            left: 0;
+        }
+        .dropdown:hover .department-content {
+            display: block;
+        }
+        .dropdown:hover .monitoring-options {
+            display: block;
+        }
+        .dropdown:hover .dropbtn {
+            background-color: #3e8e41;
+        }
+        .main-content {
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+            margin: 0;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            color: white;
+            background-color: #333;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .button:hover {
+            background-color: #555;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="logo/file.png" alt="Logo">
+        <h1>Bioinova</h1>
+    </div>
+    <div class="navbar">
+        <div class="dropdown">
+            <a href="monitoreo.html" class="dropbtn">Monitoreo</a>
+        </div>
+        <div class="dropdown">
+            <a href="programas.html" class="dropbtn">Educación</a>
+            <div class="dropdown-content">
+                <a href="programas.html">Programas</a>
+                <a href="investigacion.html">Investigación</a>
+                <a href="recursos.html">Recursos</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="proyectos.html" class="dropbtn">Colaboración</a>
+            <div class="dropdown-content">
+                <a href="donaciones.html">Socios</a>
+                <a href="voluntariado.html">Voluntariado</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="actuales.html" class="dropbtn">Campañas</a>
+            <div class="dropdown-content">
+                <a href="actuales.html">Actuales</a>
+                <a href="pasadas.html">Pasadas</a>
+                <a href="futuras.html">Futuras</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="quienes_somos.html" class="dropbtn">Quienes Somos</a>
+            <div class="dropdown-content">
+                <a href="mision.html">Misión</a>
+                <a href="vision.html">Visión</a>
+                <a href="objetivos.html">Objetivos</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="main-content">
+        <!-- Introducción -->
+        <div class="section">
+            <h2>Bienvenido a Bioinova</h2>
+            <p>En <strong>Bioinova</strong>, nos dedicamos a promover el desarrollo sostenible y la gestión eficiente de los recursos hídricos en Nicaragua. Nuestro objetivo es mejorar la calidad de vida de las comunidades a través de iniciativas innovadoras y prácticas sostenibles que protejan nuestro entorno y aseguren un futuro mejor para todos.</p>
+        </div>
+        
+        <!-- Proyectos -->
+        <div class="section">
+            <h2>Nuestros Proyectos</h2>
+            <ul>
+                <li><strong>Gestión de Recursos Hídricos:</strong> Implementamos soluciones para la conservación y distribución eficiente del agua en comunidades rurales y urbanas.</li>
+                <li><strong>Monitoreo de Calidad del Agua:</strong> Realizamos un seguimiento constante para garantizar que el agua sea segura para el consumo y el uso agrícola.</li>
+                <li><strong>Educación y Capacitación:</strong> Ofrecemos talleres y programas educativos para informar a las comunidades sobre el manejo sostenible de los recursos naturales.</li>
+            </ul>
+        </div>
+        
+        <!-- Comunidades -->
+        <div class="section">
+            <h2>Nuestras Comunidades</h2>
+            <p>Descubre cómo estamos impactando positivamente en comunidades como Sabana Grande, Los Laureles y El Faro. Cada una de estas localidades está participando en proyectos que mejoran la calidad del agua y promueven la sostenibilidad ambiental.</p>
+        </div>
+        
+        <!-- Llamada a la Acción -->
+        <div class="section">
+            <h2>¡Únete a Nosotros!</h2>
+            <p>Te invitamos a conocer más sobre nuestros proyectos y a unirte a nuestra misión de crear un futuro más verde y sostenible. Explora nuestra página para obtener información detallada sobre nuestras iniciativas y cómo puedes contribuir.</p>
+            <a href="contactos.html" class="button">Descubre Más</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Bioinova | Todos los derechos reservados</p>
+    </footer>
+</body>
+</html>
